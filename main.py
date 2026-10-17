@@ -2,12 +2,12 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
-# ایمپورت‌ها از روت اصلی (بدون کلمه bot.)
+# ایمپورت‌های اصلاح شده (بدون نیاز به پوشه)
 from config import BOT_TOKEN
-from database.session import init_db
-from database.seed import seed_all
-from middlewares.membership import MembershipMiddleware
-from handlers import start, shop, payment, admin, wallet
+from session import init_db
+from seed import seed_all
+from membership import MembershipMiddleware
+import start, shop, payment, admin, wallet
 
 async def main():
     if not BOT_TOKEN:
