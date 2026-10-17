@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
-# ایمپورت‌های اصلاح شده (بدون نیاز به پوشه)
+# ایمپورت‌های بدون پوشه
 from config import BOT_TOKEN
 from session import init_db
 from seed import seed_all
