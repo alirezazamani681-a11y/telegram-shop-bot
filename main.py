@@ -1,20 +1,15 @@
 import asyncio
-import os
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
-from bot.database.session import init_db
-from bot.database.seed import seed_all
-from bot.middlewares.membership import MembershipMiddleware
-from bot.handlers import start, shop, payment, admin, wallet
 
-# ⚠️ تنظیمات پروکسی
-os.environ["HTTP_PROXY"] = "http://127.0.0.1:10809"
-os.environ["HTTPS_PROXY"] = "http://127.0.0.1:10809"
+# ایمپورت‌ها از روت اصلی (بدون کلمه bot.)
+from config import BOT_TOKEN
+from database.session import init_db
+from database.seed import seed_all
+from middlewares.membership import MembershipMiddleware
+from handlers import start, shop, payment, admin, wallet
 
 async def main():
-    # 🔴 توکن اینجا قرار داده شده است 🔴
-    BOT_TOKEN = "8810132906:AAGL1Xf6rA7fwXpIjnKNthLQ-kKqqd0EJ94"
-    
     if not BOT_TOKEN:
         raise SystemExit("❌ BOT_TOKEN تنظیم نشده!")
 
