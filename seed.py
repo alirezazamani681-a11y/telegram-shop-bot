@@ -1,7 +1,6 @@
 from sqlalchemy import select
-from bot.database.session import async_session
-from bot.database.models import PriceConfig, UnitLimit, ProductType, GiftItem
-
+from session import async_session
+from models import PriceConfig, UnitLimit, ProductType, GiftItem
 
 DEFAULT_PRICES = [
     ("stars_unit", 4140, "قیمت هر استارز", "تومان/دانه"),
@@ -30,7 +29,6 @@ DEFAULT_GIFTS = [
     ("rose", "گل رز", "🌹", 25, 10),
     ("bouquet", "دسته گل", "💐", 50, 11),
 ]
-
 
 async def seed_all():
     async with async_session() as session:
